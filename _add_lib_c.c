@@ -3,6 +3,7 @@
 #include <string.h>
 
 #define MAX_LEN 1000
+#define PATH "/mnt/c/Users/ottof/Documents/codigos/libs_c"
 
 void printError(){
 	printf("Error! This function should receive the name of the lib from ~/.mylibs/C_C++ as argument!\n");
@@ -28,7 +29,7 @@ int main(int argc, char * argv[]){
 	}
 
 	char command[2048];
-	sprintf(command, "cp -t . ~/.mylibs/C_C++/%s/%s.c ~/.mylibs/C_C++/%s/%s.h", argv[1], argv[1], argv[1], argv[1]);
+	sprintf(command, "cp -t . %s/%s/%s.c %s/%s/%s.h", PATH, argv[1], argv[1], PATH, argv[1], argv[1]);
 	system(command);
 
 	return 0;
